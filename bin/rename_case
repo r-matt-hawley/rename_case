@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -euo pipefail
 
-for arg in $@; do
+for arg in "$@"; do
     if [[ -f "$arg" ]]; then
         dir=$(dirname "$arg")
         base=$(basename "$arg")
