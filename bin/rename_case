@@ -1,9 +1,11 @@
 #! /usr/bin/env bash
+set -euo pipefail
 
-# Iterate over all arguments passed to the script
-count=0
-for arg in "$@"; do
-    ((count++))
-    echo "$count: $arg"
+for arg in $@; do
+    if [[ -f "$arg" ]]; then
+        dir=$(dirname "$arg")
+        base=$(basename "$arg")
+        new_base=$(echo "$base" | sed -E 's/([a-z0-9])([A-Z])/\1_\L\2/g' | tr '[:upper:]' '[:lower:]')
+        mv "$arg" "$dir/$new_base"
+    fi
 done
-
