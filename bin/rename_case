@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+# Iterate over all arguments passed to the script
+count=0
+for arg in "$@"; do
+    ((count++))
+    echo "$count: $arg"
+done
+

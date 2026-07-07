@@ -1,0 +1,18 @@
+# Local
+journal
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Vim
+*.swp
+*.swo
+
+# VS Code
+.vscode/
+
+# Shell testing
+*.tmp
