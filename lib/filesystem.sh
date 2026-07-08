@@ -1,5 +1,4 @@
 # Safe rename operations
-
 rename_file() {
     local old_path="$1"
     local new_path="$2"

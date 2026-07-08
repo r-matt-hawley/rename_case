@@ -1,5 +1,4 @@
 # Case conversion algorithms
-
 convert_filename() {
     local name="$1"
 

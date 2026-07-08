@@ -1,5 +1,4 @@
 # Parse arguments and options
-
 main() {
     for arg in "$@"; do
         if [[ -f "$arg" ]]; then
