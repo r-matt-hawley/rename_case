@@ -1,21 +1,14 @@
 #!/usr/bin/env bash
 
-# Create Temp files
-begin() {
-    temp_dir=$(mktemp -d)
-    
-    # Do nothing (:) and redirect output to create the file
-    : > "$temp_dir/MyFile.txt"
-}
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+HELPERS_DIR="$(cd -- "$SCRIPT_DIR/../helpers" && pwd)"
+PROJECT_DIR="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
 
-# Delete the temp directory after the test
-cleanup() {
-    rm -rf "$temp_dir"
-}
+source "$HELPERS_DIR/setup.sh"
 
 test_pascal_to_snake_one() {
     # Test converting from PascalCase to snake_case
-    ./bin/rename_case "$temp_dir/MyFile.txt"
+    $PROJECT_DIR/bin/rename_case "$temp_dir/MyFile.txt"
     rename_status=$?
 
     if [[ $rename_status -ne 0 ]]; then
@@ -39,4 +32,5 @@ test_pascal_to_snake_one() {
 
 begin
 trap cleanup EXIT
+create_test_files "MyFile.txt"
 test_pascal_to_snake_one

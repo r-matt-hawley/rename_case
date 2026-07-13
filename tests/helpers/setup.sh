@@ -1,4 +1,5 @@
-begin("$@") {
+
+begin() {
     temp_dir=$(mktemp -d)
 }
 
