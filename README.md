@@ -15,4 +15,6 @@ The project began with support for converting `PascalCase` filesystem names to `
 
 🚧 Early development (Milestone 1)
 
-The project architecture has been designed, and implementation is about to begin.
+The project architecture has been designed, and mvp is both functional with separation of concerns and unit tested.
+
+
