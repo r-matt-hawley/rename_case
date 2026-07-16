@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Move to project directory and its get absolute path
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PROJECT_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 
 source "$PROJECT_ROOT/lib/cli.sh"
 source "$PROJECT_ROOT/lib/convert.sh"
