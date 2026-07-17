@@ -13,21 +13,21 @@ test_pascal_to_snake_one() {
 
     if [[ $rename_status -ne 0 ]]; then
         echo "FAIL: Expected exit code 0, got $rename_status"
-        return 1
+        return $EXIT_FAILURE
     fi
     
     if [[ ! -f "$temp_dir/my_file.txt" ]]; then
         echo "FAIL: File was not renamed to snake_case"
-        return 1
+        return $EXIT_FAILURE
     fi
 
     if [[ -f "$temp_dir/MyFile.txt" ]]; then
         echo "FAIL: Original file still exists"
-        return 1
+        return $EXIT_FAILURE
     fi
 
     # Test passed
-    return 0
+    return $EXIT_SUCCESS
 }
 
 begin

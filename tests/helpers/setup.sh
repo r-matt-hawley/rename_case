@@ -1,6 +1,11 @@
 
 begin() {
+
+    # Create a temporary directory for testing
     temp_dir=$(mktemp -d)
+
+    # Source global constants
+    source "$PROJECT_DIR/lib/constants.sh"
 }
 
 # Create Temp files

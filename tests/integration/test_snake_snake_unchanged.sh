@@ -13,16 +13,16 @@ test_snake_snake_unchanged() {
 
     if [[ $rename_status -ne 0 ]]; then
         echo "FAIL: Expected exit code 0, got $rename_status."
-        return 1
+        return $EXIT_FAILURE
     fi
     
     if [[ ! -f "$temp_dir/my_file.txt" ]]; then
         echo "FAIL: File name changed unexpectedly."
-        return 1
+        return $EXIT_FAILURE
     fi
 
     # Test passed
-    return 0
+    return $EXIT_SUCCESS
 }
 
 begin
